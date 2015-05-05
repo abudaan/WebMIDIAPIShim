@@ -35,6 +35,7 @@
     "url": "https://github.com/cwilso/WebMIDIAPIShim.git"
   },
   "scripts": {
+    "test": "node ./examples/nodejs/test.js",
     "build": "browserify src/shim.js -t [ babelify --sourceMapRelative ./src ] --debug | exorcist lib/WebMIDIAPI.js.map > lib/WebMIDIAPI.js",
     "watch": "watchify src/shim.js -t babelify -o lib/WebMIDIAPI.js --debug --verbose"
   },
@@ -47,8 +48,5 @@
     "browserify": ">=8.1.1",
     "exorcist": "^0.1.6",
     "watchify": ">=1.0.1"
-  },
-  "engines": {
-    "node": "0.10.x"
   }
 }

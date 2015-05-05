@@ -1,5 +1,8 @@
-src
-index.html
+examples/list_devices
+examples/routing_1
+examples/routing_2
 images
 javascripts
+src
 stylesheets
+index.html

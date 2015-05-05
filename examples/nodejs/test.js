@@ -1,14 +1,14 @@
 /*
-  This script is for Node.js, you can run it like so:
+  This script is for Node.js only. Don't use it in HTML! You can run it like so:
     - open a terminal
-    - navigate to the folder that contains this file
-    - run "npm install web-midi-api" to install the shim in the local directory
-    - type "node test.js" in your terminal and press the enter key (on Linux type: "nodejs test.js")
+    - navigate to the package root directory
+    - run "npm update" to install the dependencies (only need to do it once)
+    - run "npm test" to run this test
 */
 
 'use strict';
 
-var navigator = require('web-midi-api');
+var navigator = require('../..'); // that is 'web-midi-api' package
 
 var midi;
 var inputs;
@@ -27,9 +27,15 @@ function onMIDISuccess(midiAccess){
 }
 
 function testOutputs(){
+  var num = 0;
   console.log('Testing MIDI-Out ports...');
   outputs.forEach(function(port){
-    console.log('id:', port.id, 'manufacturer:', port.manufacturer, 'name:', port.name, 'version:', port.version);
+    console.log('Port:', num++);
+    console.log('id:', port.id);
+    console.log('manufacturer:', port.manufacturer);
+    console.log('name:', port.name);
+    console.log('version:', port.version);
+    console.log();
     port.send([0x90, 60, 0x7f]);
   });
   setTimeout(stopOutputs, 1000);
