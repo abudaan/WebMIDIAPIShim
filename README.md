@@ -1,3 +1,8 @@
+# DEPRECATED!
+
+Please use [JZZ](https://github.com/jazz-soft/JZZ) to enable MIDI in browsers that do not support the WebMIDI API.
+
+
 # Web MIDI API Shim
 
 ![nodejs](http://jazz-soft.github.io/img/nodejs.jpg)
